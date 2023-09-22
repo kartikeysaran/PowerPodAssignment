@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "81811443672",
+    "project_id": "powerpod-66e01",
+    "storage_bucket": "powerpod-66e01.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:81811443672:android:611962482d36de51556cad",
+        "android_client_info": {
+          "package_name": "ks.assignment.powerpod"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyASRolzt4c8_B66NGUdxnDkW47_KInxTzk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
