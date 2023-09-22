@@ -21,5 +21,11 @@
             android:text="Extracted data here: "
             android:id="@+id/tv_data"
             />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Post Data to API"
+            android:layout_margin="20dp"
+            android:id="@+id/btn_post_data"/>
     </LinearLayout>
 </layout>

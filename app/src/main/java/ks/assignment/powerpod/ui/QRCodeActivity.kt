@@ -31,7 +31,6 @@ import com.google.mlkit.vision.common.InputImage
 import dagger.hilt.android.AndroidEntryPoint
 import ks.assignment.powerpod.R
 import ks.assignment.powerpod.databinding.ActivityQrcodeBinding
-import ks.assignment.powerpod.view_models.CameraXViewModel
 import ks.assignment.powerpod.view_models.QRCodeViewModel
 import java.nio.ByteBuffer
 import java.util.concurrent.ExecutorService
@@ -48,11 +47,20 @@ class QRCodeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_qrcode)
-        viewModel.qrData.observe(this, {
+        viewModel.qrData.observe(this, Observer {
             if(it!=null) {
                 binding.tvData.text = "Extraced data: "+it
             }
         })
+        binding.btnPostData.setOnClickListener{
+            if(!viewModel.qrData.value.isNullOrEmpty()) {
+                viewModel.postDataToAPI()
+                Toast.makeText(this, "Successfull data pushed to server", Toast.LENGTH_SHORT).show()
+                finish()
+            } else {
+                Toast.makeText(this, "No data found in qrcode", Toast.LENGTH_SHORT).show()
+            }
+        }
         if (allPermissionsGranted()) {
             bindCameraUseCases()
         } else {

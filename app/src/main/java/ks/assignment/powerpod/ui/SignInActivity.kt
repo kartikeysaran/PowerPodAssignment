@@ -54,7 +54,7 @@ class SignInActivity : AppCompatActivity() {
                 UpdateUI(account)
             }
         } catch (e: ApiException) {
-            Toast.makeText(this, e.toString(), Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Error Occurred: "+e.localizedMessage, Toast.LENGTH_SHORT).show()
         }
     }
 
