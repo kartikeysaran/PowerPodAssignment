@@ -1,4 +1,4 @@
-package ks.assignment.powerpod
+package ks.assignment.powerpod.model
 
 sealed class ResultData<out T> {
 

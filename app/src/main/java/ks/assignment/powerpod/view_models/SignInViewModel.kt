@@ -1,4 +1,4 @@
-package ks.assignment.powerpod.signIn
+package ks.assignment.powerpod.view_models
 
 import androidx.lifecycle.ViewModel
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
@@ -9,13 +9,9 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
 @HiltViewModel
-class SignInViewModel @Inject constructor(private val firebaseAuth: FirebaseAuth, private val gso: GoogleSignInOptions, private val gsc: GoogleSignInClient) : ViewModel() {
+class SignInViewModel @Inject constructor(private val firebaseAuth: FirebaseAuth, private val gsc: GoogleSignInClient) : ViewModel() {
     fun getFirebaseAuth(): FirebaseAuth {
         return firebaseAuth
-    }
-
-    fun getGoogleSignInOptions(): GoogleSignInOptions {
-        return gso
     }
 
     fun getGoogleSignInClient() : GoogleSignInClient {
